@@ -1,0 +1,104 @@
+2021-01-29 13:09:18.738  INFO 5960 --- [main] com.example.cin.CinemaApplication        : Starting CinemaApplication using Java 1.8.0_251 on Asus with PID 5960 (C:\Users\User\IdeaProjects\cinema\target\classes started by Grigor in C:\Users\User\IdeaProjects\cinema)
+2021-01-29 13:09:18.863  INFO 5960 --- [main] com.example.cin.CinemaApplication        : No active profile set, falling back to default profiles: default
+2021-01-29 13:09:21.535  INFO 5960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-29 13:09:21.707  INFO 5960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 3 JPA repository interfaces.
+2021-01-29 13:09:23.566  INFO 5960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-01-29 13:09:23.582  INFO 5960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-29 13:09:23.582  INFO 5960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-29 13:09:23.754  INFO 5960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-29 13:09:23.754  INFO 5960 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4719 ms
+2021-01-29 13:09:24.379  INFO 5960 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-29 13:09:24.504  INFO 5960 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-29 13:09:24.879  INFO 5960 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-29 13:09:25.097  INFO 5960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-29 13:09:25.925  INFO 5960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-29 13:09:26.019  INFO 5960 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-01-29 13:09:26.629 ERROR 5960 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unknown mappedBy in: com.example.cin.model.Hole.seance, referenced property unknown: com.example.cin.model.Seance.hole
+2021-01-29 13:09:26.629  WARN 5960 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.example.cin.model.Hole.seance, referenced property unknown: com.example.cin.model.Seance.hole
+2021-01-29 13:09:26.629  INFO 5960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-29 13:09:26.644  INFO 5960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-29 13:09:26.660  INFO 5960 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-01-29 13:09:26.675  INFO 5960 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-29 13:09:26.785 ERROR 5960 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.example.cin.model.Hole.seance, referenced property unknown: com.example.cin.model.Seance.hole
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1159) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.example.cin.CinemaApplication.main(CinemaApplication.java:11) [classes/:na]
+Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: com.example.cin.model.Hole.seance, referenced property unknown: com.example.cin.model.Seance.hole
+	at org.hibernate.cfg.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:169) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:295) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.27.Final.jar:5.4.27.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.3.jar:5.3.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.3.jar:5.3.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.3.jar:5.3.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.3.jar:5.3.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 17 common frames omitted
+
+2021-01-29 13:10:40.401  INFO 3616 --- [main] com.example.cin.CinemaApplication        : Starting CinemaApplication using Java 1.8.0_251 on Asus with PID 3616 (C:\Users\User\IdeaProjects\cinema\target\classes started by Grigor in C:\Users\User\IdeaProjects\cinema)
+2021-01-29 13:10:40.401  INFO 3616 --- [main] com.example.cin.CinemaApplication        : No active profile set, falling back to default profiles: default
+2021-01-29 13:10:42.182  INFO 3616 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-29 13:10:42.338  INFO 3616 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142 ms. Found 3 JPA repository interfaces.
+2021-01-29 13:10:43.354  INFO 3616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-01-29 13:10:43.370  INFO 3616 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-29 13:10:43.385  INFO 3616 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-29 13:10:43.557  INFO 3616 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-29 13:10:43.573  INFO 3616 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3063 ms
+2021-01-29 13:10:43.901  INFO 3616 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-29 13:10:43.964  INFO 3616 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-29 13:10:44.135  INFO 3616 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-29 13:10:44.292  INFO 3616 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-29 13:10:44.635  INFO 3616 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-29 13:10:44.651  INFO 3616 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-01-29 13:10:50.339  INFO 3616 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-29 13:10:50.526  INFO 3616 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-29 13:10:50.854  WARN 3616 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 13:10:53.120  INFO 3616 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/admin/**'] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2347b7af, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b098563, org.springframework.security.web.header.HeaderWriterFilter@72eed547, org.springframework.security.web.authentication.logout.LogoutFilter@37b1149b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3d0352, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d0b814d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1682e6a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2864f887, org.springframework.security.web.session.SessionManagementFilter@3c17bd0b, org.springframework.security.web.access.ExceptionTranslationFilter@50778bde, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d67d5a4]
+2021-01-29 13:10:53.729  INFO 3616 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-29 13:10:54.198  INFO 3616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-01-29 13:10:54.229  INFO 3616 --- [main] com.example.cin.CinemaApplication        : Started CinemaApplication in 14.835 seconds (JVM running for 16.335)
+2021-01-29 14:09:51.061  INFO 5420 --- [main] com.example.cin.CinemaApplication        : Starting CinemaApplication using Java 1.8.0_251 on Asus with PID 5420 (C:\Users\User\IdeaProjects\cinema\target\classes started by Grigor in C:\Users\User\IdeaProjects\cinema)
+2021-01-29 14:09:51.089  INFO 5420 --- [main] com.example.cin.CinemaApplication        : No active profile set, falling back to default profiles: default
+2021-01-29 14:09:52.902  INFO 5420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-29 14:09:53.036  INFO 5420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 4 JPA repository interfaces.
+2021-01-29 14:09:53.962  INFO 5420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-01-29 14:09:53.981  INFO 5420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-29 14:09:53.982  INFO 5420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-29 14:09:54.198  INFO 5420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-29 14:09:54.199  INFO 5420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2982 ms
+2021-01-29 14:09:54.635  INFO 5420 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-29 14:09:54.710  INFO 5420 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-01-29 14:09:54.892  INFO 5420 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-01-29 14:09:55.049  INFO 5420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-29 14:09:56.101  INFO 5420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-29 14:09:56.147  INFO 5420 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-01-29 14:10:00.328  INFO 5420 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-29 14:10:00.406  INFO 5420 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-29 14:10:00.578  WARN 5420 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 14:10:02.376  INFO 5420 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/admin/**'] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@667797f, org.springframework.security.web.context.SecurityContextPersistenceFilter@59e082f8, org.springframework.security.web.header.HeaderWriterFilter@719c1faf, org.springframework.security.web.authentication.logout.LogoutFilter@349f0ca4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b682e9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44d43cc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c497a55, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@184751f3, org.springframework.security.web.session.SessionManagementFilter@2262f0d8, org.springframework.security.web.access.ExceptionTranslationFilter@68e47e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e848aea]
+2021-01-29 14:10:02.800  INFO 5420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-29 14:10:03.347  INFO 5420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-01-29 14:10:03.364  INFO 5420 --- [main] com.example.cin.CinemaApplication        : Started CinemaApplication in 13.67 seconds (JVM running for 15.566)
