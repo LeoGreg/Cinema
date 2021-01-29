@@ -29,11 +29,6 @@ public class CinemaController {
     public ResponseEntity<Cinema> update(@Valid @RequestBody Cinema cinema, @PathVariable(value = "id") Long cinema_id) throws NotFoundException {
         return ResponseEntity.ok(cinemaSer.update_cinema(cinema, cinema_id));
     }
-    @RolesAllowed(Roles.ADMIN_ROLE)
-    @DeleteMapping("/del/cinema_id/{id}")
-    public ResponseEntity<Map<String, Boolean>> del(@PathVariable(value = "id") Long cinema_id) throws NotFoundException {
-        return ResponseEntity.ok(cinemaSer.delete_cinema(cinema_id));
-    }
 
 
 

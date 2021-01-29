@@ -6,9 +6,11 @@ import com.example.cin.model.Movie;
 
 
 import com.example.cin.model.dto.MovieMetaDto;
+import com.example.cin.model.dto.UpMovieDto;
 import com.example.cin.model.exception.DuplicateException;
 import com.example.cin.repository.CinemaRep;
 import com.example.cin.repository.MovieRep;
+import com.example.cin.repository.SeanceRep;
 import com.example.cin.service.abst.MovieSer;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -30,6 +32,8 @@ public class MovieSerImpl implements MovieSer {
     @Autowired
     private CinemaRep cinemaRep;
 
+    @Autowired
+    private SeanceRep seanceRep;
 
     private String root = "C:/Users/User/Desktop/up";
 
@@ -62,20 +66,14 @@ public class MovieSerImpl implements MovieSer {
 
     @Override
     @Transactional
-    public Movie update_movie(Long movie_id, Long cinema_id, Movie up_movie) throws com.example.cin.model.exception.NotFoundException {
+    public Movie update_movie(Long movie_id, Long cinema_id, UpMovieDto dto) throws com.example.cin.model.exception.NotFoundException {
         if (!cinemaRep.findById(cinema_id).isPresent()) {
             throw new com.example.cin.model.exception.NotFoundException("not.found.theatre");
         }
         return movieRep.findById(movie_id).map(db_movie -> {
-            if (up_movie.getName() == null) {
-                db_movie.setName(db_movie.getName());
-            }
-            db_movie.setName(up_movie.getName());
-
-            if (up_movie.getDescription() == null) {
-                db_movie.setDescription(db_movie.getDescription());
-            }
-            db_movie.setDescription(up_movie.getDescription());
+                   db_movie.setDescription(dto.getDescription());
+                   db_movie.setName(dto.getName());
+                   db_movie.setDuration(dto.getDuration());
             return movieRep.save(db_movie);
         }).orElseThrow(() -> new com.example.cin.model.exception.NotFoundException("movie.not.found"));
     }
@@ -85,9 +83,11 @@ public class MovieSerImpl implements MovieSer {
     @Transactional
     public Map<String, Boolean> deleteMovie(Long movieId, Long cinema_id) throws com.example.cin.model.exception.NotFoundException {
         return movieRep.findByIdAndCinemaId(movieId, cinema_id).map(db_movie -> {
-            Cinema cinema = cinemaRep.getById(cinema_id);
-            cinema.getMovies().remove(db_movie);
-            cinemaRep.save(cinema);
+
+            if (db_movie.getSeance() != null) {
+                seanceRep.delete(db_movie.getSeance());
+            }
+            movieRep.delete(db_movie);
             Map<String, Boolean> response = new HashMap<>();
             response.put("DELETED", Boolean.TRUE);
             return response;

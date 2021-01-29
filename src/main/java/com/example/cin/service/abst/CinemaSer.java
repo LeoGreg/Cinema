@@ -13,6 +13,5 @@ public interface CinemaSer {
     @Transactional
     Cinema update_cinema(Cinema up_cinema, Long cinema_id) throws com.example.cin.model.exception.NotFoundException;
 
-    @Transactional
-    Map<String, Boolean> delete_cinema(Long cinema_id) throws NotFoundException;
+
 }

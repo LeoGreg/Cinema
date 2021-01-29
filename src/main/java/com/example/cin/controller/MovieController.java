@@ -3,6 +3,7 @@ package com.example.cin.controller;
 
 import com.example.cin.model.Movie;
 import com.example.cin.model.dto.MovieMetaDto;
+import com.example.cin.model.dto.UpMovieDto;
 import com.example.cin.model.exception.DuplicateException;
 import com.example.cin.model.exception.NotFoundException;
 import com.example.cin.service.abst.MovieSer;
@@ -34,7 +35,7 @@ public class MovieController {
     @PutMapping("/up/movie_id/{m_id}/cinema_id/{cin_id}")
     public ResponseEntity<Movie> update(@PathVariable(value = "m_id") Long movie_id,
                                         @PathVariable(value = "cin_id") Long cinema_id,
-                                        @Valid @RequestBody Movie movie
+                                        @Valid @RequestBody UpMovieDto movie
     ) throws DuplicateException, NotFoundException, javassist.NotFoundException {
         return ResponseEntity.ok(movieSer.update_movie(movie_id, cinema_id, movie));
     }
